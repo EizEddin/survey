@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * Implementation of hook_webform_select_options_info().
+ * See webform/webform_hooks.php for further information on this hook in the Webform API.
+ */
+function mihe_survey_webform_select_options_info() {
+    $items = array();
+    $items['options1'] = array(
+        'title' => t('Options Group 1'),
+        'options callback' => '_mihe_survey_options'
+    );
+
+   return $items;
+}
+
+/**
+ * Build an options list to be used with webforms select list based in drupal roles
+ */
+function _mihe_survey_options() {
+//    $roles = user_roles();
+//    $contentarray = array();
+//    $contentarray[0] = t("Select user role");
+//  
+//     foreach ($roles as $role) {
+//            $contentarray[$role] = t($role);
+//      }
+//
+//    return $contentarray;
+    
+    $options = array(
+        5 => "Definitely agree",
+        4 => "Mostly agree", 
+        3 => "Neither agree nor disagree", 
+        2 => "Mostly disagree",
+        1 => "Definitely disagree",
+        0 => "Not applicable",        
+    );
+    
+    return $options;
+    
+}

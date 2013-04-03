@@ -1,0 +1,9 @@
+name = MIHE Survey
+description = MIHE Survey Module
+core = 7.x
+package = BaraSoft
+;php = 
+version = "7.x-1.0"
+;dependencies[] = 
+;files[] = 
+;configure = 
