@@ -34,9 +34,26 @@ function _mihe_survey_options() {
         3 => "Neither agree nor disagree", 
         2 => "Mostly disagree",
         1 => "Definitely disagree",
-        0 => "Not applicable",        
+        "NA" => "Not applicable",        
     );
     
     return $options;
+    
+}
+
+
+/**
+ * Implementation of hook_page_build().
+ * .
+ */
+function mihe_survey_page_build(&$page) {
+    
+    global $base_url;
+    
+    //Add logo to the main_top_middle region
+    $top_right_logo =  '<img src="'.$base_url.'/'.drupal_get_path('module', 'mihe_survey').'/images/mihe-logo-2.png" />';
+    // If there's nothing in the main_top_middle region
+    $page['main_top_middle'] = array(
+        '#markup' =>$top_right_logo, );   
     
 }

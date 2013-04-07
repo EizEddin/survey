@@ -146,9 +146,16 @@ function STARTERKIT_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function STARTERKIT_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+
+function barasoft_survey_preprocess_page(&$variables, $hook) {
+//  $variables['sample_variable'] = t('Lorem ipsum.');
+  
+    //Add custom page template per node type
+    if (isset($variables['node'])) {
+        // If the node type is "blog" the template suggestion will be "page--blog.tpl.php".
+        $variables['theme_hook_suggestions'][] = 'page__'. str_replace('_', '--', $variables['node']->type);
+    } 
+    
 }
 // */
 

@@ -1,0 +1,98 @@
+/* 
+    Document   : barasoft-custom
+    Created on : 06-Apr-2013, 15:32:32
+    Author     : Admin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#page, .region-bottom {
+  max-width: none; /* override zen*/
+}
+
+#header {
+    background-color: #009933;
+    height: 80px;
+    border-bottom: 2px solid #000066;
+}
+
+#header-inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    min-width: 600px;    
+}
+
+#site-name {
+    margin-top: 10px;
+}
+#site-name a:link, #site-name a:visited, #site-name a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+#main {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    min-width: 600px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+#main-top {
+    
+}
+#main-top-left {
+    /*width: 300px;*/
+}
+#main-top-middle{
+    /*width: 600px;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#main-top-right{
+    /*width: 300px;*/
+}
+
+
+/* Override responsive-sidebars.css */
+.sidebar-first #content { 
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;     
+}
+
+
+fieldset {
+    border: 1px solid #CCCCCC;
+    position: relative;
+}
+fieldset legend {
+    display: block;
+    background: #DDDDDD;
+    position: absolute;
+    top: -12px;
+    width: 100%;
+    padding: 3px 0;
+    left: -1px;
+    border: 1px solid #CCCCCC;
+    font-weight: bold;
+}
+
+.fieldset-wrapper {
+    
+}
+
+#webform-component-looking-back-on-your-experience-of-studying-at-mihe--positive {
+    margin-top: 50px;
+}
+
+.form-submit {
+    font-size: 14px;
+    padding: 3px;
+}

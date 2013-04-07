@@ -29,7 +29,7 @@
     $col_tot = $col_left + $col_right;
     global $base_url;
 ?>
-<table cellpadding="3" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; width:<?php print($col_tot);?>px">
+<table border="1" cellpadding="3" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; width:<?php print($col_tot);?>px">
     <!--<tr><td align="center"><img src="../<?php //print($base_url.'/'.drupal_get_path('module', 'mihe_survey'));?>/images/mihe-logo-2.png" /></td></tr>-->
     <tr><td align="center"><img src="http://www.barasoft.co.uk/survey/sites/all/modules/barasoft/mihe_survey/images/mihe-logo-2.png" /></td></tr>
     <tr><td align="center" style="font-size:24px; font-weight: bold; height: 30px;">Student Survey Questionnaire</td></tr>

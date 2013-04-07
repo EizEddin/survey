@@ -62,6 +62,7 @@ stylesheets[all][] = css/comments.css
 stylesheets[all][] = css/forms.css
 stylesheets[all][] = css/fields.css
 stylesheets[all][] = css/print.css
+stylesheets[all][] = css/barasoft-custom.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html
@@ -98,6 +99,9 @@ stylesheets[all][] = css/print.css
 
 regions[header]         = Header
 regions[navigation]     = Navigation bar
+regions[main_top_left]     = Main top left
+regions[main_top_middle]     = Main top middle
+regions[main_top_right]     = Main top right
 regions[highlighted]    = Highlighted
 regions[help]           = Help
 regions[content]        = Content
