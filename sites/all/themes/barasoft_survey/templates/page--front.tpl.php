@@ -115,7 +115,7 @@
 
   <div id="main">
       
-      <center>This website is still under construction. You can contact us on survey@barasoft.co.uk.</center>
+      <center><img src="http://www.barasoft.co.uk/survey/sites/all/themes/barasoft_survey/under-construction-survey.gif" alt="BaraSoft Survey" width="550"></center>
             
   </div><!-- /#main -->
 

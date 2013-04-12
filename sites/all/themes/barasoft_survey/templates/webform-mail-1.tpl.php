@@ -23,13 +23,57 @@
 <?php //print_r($submission);?>
 
 <?php print "======================" ?>
+<div style="width: 90%; text-align: center;">
+    <div style="border: 20px solid #FFF;">       
+        <img src="http://www.barasoft.co.uk/survey/sites/all/modules/barasoft/mihe_survey/images/mihe-logo-2.png" />        
+    </div>
+    <div style="border: 10px solid #FFF; text-align: center; font-size: 24px; font-weight: bold;">
+        Student Survey Questionnaire
+    </div>
+    <div style="border-left: 3px solid #FFF; border-right: 3px solid #FFF; border-bottom: 5px solid #FFF; border-top: 5px solid #FFF; text-align: left;">
+        <b>Submitted on:&nbsp;</b> <?php print (date('d/m/Y, H:i', $submission->submitted)); ?><br />
+        <b>Submitted by:&nbsp;</b> <?php print ($submission->remote_addr); ?>
+    </div>    
+    <?php
+        foreach($node->webform['components'] as $eid => $entry){
+            if($entry['type']=='fieldset'){
+                print '<div style="border-left: 3px solid #CCC; border-right: 3px solid #CCC; border-bottom: 3px solid #CCC; padding-top:3px; text-align: left; background-color:#CCC; font-weight: bold;">'.$entry['name'].'</div>';
+            }else{
+                if (isset($submission->data[$eid]['value'][0])){
+//                if($submission->data[$eid]['value'][0]){
+                   print '<div style="border-left: 3px solid #EEE; border-right: 3px solid #EEE; border-bottom: 3px solid #EEE; padding-top:3px; text-align: left; background-color:#EEE; font-weight: bold;">'.$entry['name'].'</div>';
+                   foreach($submission->data[$eid]['value'] as $vid => $value){
+                        if($entry['type']=='select'){
+                            $optionsArr[] = array();
+                            $options = explode("\n",$entry['extra']['items']);
+                            foreach ($options as $option) {
+                                $bla = explode("|", $option);
+                                 if (isset($bla[0]) && isset($bla[1])) {
+                                     $optionsArr[$bla[0]] =  $bla[1];
+                                 }
+                            }
+                            if (isset($optionsArr[$value])) {
+                                print '<div style="border-left: 3px solid #FFF; border-right: 3px solid #FFF; border-bottom: 3px solid #FFF; padding-top:3px; text-align: left;">'.$value.' = '.$optionsArr[$value].'</div>';                       
+                            }
+                        }else{
+                            if (isset($value)) {
+                                print '<div style="border-left: 3px solid #FFF; border-right: 3px solid #FFF; border-bottom: 3px solid #FFF; padding-top:3px; text-align: left;">'.$value.'</div>';                       
+                            }
+                        }
+                   }
+                }
+            }
+        }
+    ?>    
+</div>
+<?php print "======================" ?>
 <?php   
     $col_left = 500;
     $col_right = 200;
     $col_tot = $col_left + $col_right;
     global $base_url;
 ?>
-<table cellpadding="3" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; width:<?php print($col_tot);?>px">
+<table cellpadding="0" style="border-width: 1px; border-color:#000000; font-family:Arial, Helvetica, sans-serif; font-size:12px; width:<?php print($col_tot);?>px">
     <!--<tr><td align="center"><img src="../<?php //print($base_url.'/'.drupal_get_path('module', 'mihe_survey'));?>/images/mihe-logo-2.png" /></td></tr>-->
     <tr><td align="center"><img src="http://www.barasoft.co.uk/survey/sites/all/modules/barasoft/mihe_survey/images/mihe-logo-2.png" /></td></tr>
     <tr><td align="center" style="font-size:24px; font-weight: bold; height: 30px;">Student Survey Questionnaire</td></tr>

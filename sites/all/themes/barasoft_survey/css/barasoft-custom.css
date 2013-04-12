@@ -23,8 +23,13 @@
     min-width: 600px;    
 }
 
+#logo img {
+    margin-top: 15px;
+}
+
 #site-name {
     margin-top: 10px;
+    margin-left: 10px;
 }
 #site-name a:link, #site-name a:visited, #site-name a:hover {
     color: #FFFFFF;
@@ -37,6 +42,7 @@
     margin-right: auto;
     max-width: 1200px;
     min-width: 600px;
+    min-height: 500px;
     margin-top: 20px;
     padding-top: 20px;
 }
@@ -95,4 +101,15 @@ fieldset legend {
 .form-submit {
     font-size: 14px;
     padding: 3px;
+}
+
+
+.node-type-webform h1 {
+    text-align: center;
+}
+
+
+#footer {
+    border-top: 2px solid #009933;
+    text-align: center;
 }
